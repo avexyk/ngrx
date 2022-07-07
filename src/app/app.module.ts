@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { itemsReducer } from './state/reducers/items.reducer';
+import { ROOT_REDUCERS } from './state/app.state';
 
 
 
@@ -17,7 +19,12 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(ROOT_REDUCERS
+      // {
+      // objeto de json
+      // estadoDeItems: itemsReducer
+      // }
+    ),
     StoreDevtoolsModule.instrument({ name: 'TEST' }) //TODO: NGRX
   ],
   providers: [],

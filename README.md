@@ -1,5 +1,9 @@
 # Install NgRx
 ng add @ngrx/store@12.5.1
+ng add @ngrx/store-devtools@12.5.1
+
+# Extension
+https://github.com/reduxjs/redux-devtools/tree/main/extension
 
 # ExampleNgrx
 

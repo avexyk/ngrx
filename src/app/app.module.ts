@@ -8,6 +8,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { itemsReducer } from './state/reducers/items.reducer';
 import { ROOT_REDUCERS } from './state/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { ItemsEffects } from './state/effects/items.effects';
 
 
 
@@ -25,7 +27,8 @@ import { ROOT_REDUCERS } from './state/app.state';
       // estadoDeItems: itemsReducer
       // }
     ),
-    StoreDevtoolsModule.instrument({ name: 'TEST' }) //TODO: NGRX
+    StoreDevtoolsModule.instrument({ name: 'TEST' }),
+    EffectsModule.forRoot([ItemsEffects]) //TODO: NGRX
   ],
   providers: [],
   bootstrap: [AppComponent]

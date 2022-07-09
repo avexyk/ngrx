@@ -21,7 +21,7 @@ export class ShowCasePageComponent implements OnInit {
 
   constructor(
     private store: Store<any>,
-    private showCaseService: ShowCaseService
+    // private showCaseService: ShowCaseService
   ) {
 
 
@@ -29,17 +29,18 @@ export class ShowCasePageComponent implements OnInit {
 
   ngOnInit(): void {
     // escuchando un selector del store
-    this.loading$ = this.store.select(selectLoading);
+    this.loading$ = this.store.select(selectLoading); // true - false
 
-    this.store.dispatch(loadItems()); // Aqui comienza el estado
+    this.store.dispatch(loadItems()); // Aqui comienza el estado para cargar la data
 
-    this.showCaseService.getDataApi()
-        .subscribe( (response: ItemModel[]) => {
-          // console.log( '_____________', response );
-          this.store.dispatch(loadedItems(
-            { items: response }
-          )); // se llama a loadedItems cuando los articulos han sido cargados de forma correcta y se le manda los el array del api
-        });
+    // this.showCaseService.getDataApi()
+    //     .subscribe( (response: ItemModel[]) => {
+    //       // console.log( '_____________', response );
+    //       this.store.dispatch(loadedItems(
+    //         { items: response }
+    //       )); // se llama a loadedItems cuando los articulos han sido cargados de forma correcta y se le manda los el array del api
+    //     });
+
   }
 
 

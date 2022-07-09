@@ -1,4 +1,7 @@
 <div class="ui-gap">
+    <!-- Asi se subscribe -->
+    <!-- <b>Cargando...{{ loading$ | async | json }}</b> -->
+    <b *ngIf="( loading$ | async )">Cargando...</b>
     <!-- <app-ui-search></app-ui-search>
     <app-ui-filter></app-ui-filter> -->
     <app-ui-block-item></app-ui-block-item>

@@ -19,10 +19,10 @@ export class ItemsEffects {
         )
     );
  
-  constructor(
-    private actions$: Actions,
-    private showCaseService: ShowCaseService
-  ) {}
+    constructor(
+      private actions$: Actions,
+      private showCaseService: ShowCaseService
+    ) {}
 
 
 }
